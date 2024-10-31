@@ -8,20 +8,25 @@ import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/appointment" element={<Appointment />} />
-      <Route path="/doctors" element={<Doctors />}>
-        <Route path="/doctors:docId" />
-      </Route>
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
-      <Route path="/myappointment" element={<MyAppointment />} />
-      <Route path="/profile" element={<Profile />} />
-    </Routes>
+    <>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/appointment" element={<Appointment />} />
+        <Route path="/doctors" element={<Doctors />}>
+          <Route path="/doctors:docId" />
+        </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/myappointment" element={<MyAppointment />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </>
   );
 }
 
