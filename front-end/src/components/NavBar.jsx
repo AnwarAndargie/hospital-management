@@ -8,16 +8,20 @@ const NavBar = () => {
   const [token, setToken] = useState(true);
   return (
     <nav>
-      <div className="flex flex-row justify-between items-center mb-5 py-4 ml-12 mr-12">
+      <div className="ml-6 mr-6 mb-2 flex flex-row justify-between items-center md:mb-5 py-4 xl:ml-24 xl:mr-24">
         <div>
           <Link to="/">
-            <img className="w-44 cursor-pointer" src={assets.logo} alt="logo" />
+            <img
+              className="w-24 md:w-44 cursor-pointer"
+              src={assets.logo}
+              alt="logo"
+            />
           </Link>
         </div>
         <div>
           <ul
-            className="flex flex-row items-center gap-x-4  text-;
-       list-none capitalize text-gray-950 text-lg"
+            className="flex flex-col text-sm  md:flex md:flex-row items-center md:gap-x-4  text-;
+       list-none capitalize text-gray-950 md:text-lg"
           >
             <NavLink to="/">
               <li>Home</li>
@@ -43,13 +47,13 @@ const NavBar = () => {
         {token ? (
           <div className="flex items-center cursor-pointer gap-3 group relative">
             <img
-              className="w-12 h-12 rounded-full"
+              className=" w-8 h-8 md:w-12 md:h-12 rounded-full"
               src={assets.profile_pic}
               alt="profile picture"
             />
             <img src={assets.dropdown_icon} alt="drop-down icon" />
             <div className="absolute right-0 top-0 pt-14 font-semibold text-base text-gray-600 z-20 hidden group-hover:block">
-              <div className="min-w-52 h-36 bg-stone-100 rounded-sm flex flex-col gap-4 p-4">
+              <div className="w-36 h-24 text-sm gap-2 p-2 md:min-w-52 md:h-36 bg-stone-100 rounded-sm flex flex-col md:gap-4 md:p-4">
                 <p
                   onClick={() => {
                     navigate("profle");
@@ -82,13 +86,13 @@ const NavBar = () => {
             onClick={() => {
               navigate("/login");
             }}
-            className="w-[195px] h-[44px]  text-lg rounded-3xl outline-none bg-blue-500 text-white"
+            className="w-24 h-8 text-xs md:w-[195px] md:h-[44px]  md:text-lg rounded-3xl outline-none bg-blue-500 text-white"
           >
             Create Account
           </button>
         )}
       </div>
-      <hr className="w-full ml-12 mr-12 h-4 text-slate-700" />
+      <hr className="w-full ml-24 mr-24 h-4 text-slate-700" />
     </nav>
   );
 };
