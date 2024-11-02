@@ -9,6 +9,7 @@ import Profile from "./pages/Profile";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/myappointment" element={<MyAppointment />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
+      <Footer />
     </>
   );
 }
