@@ -7,10 +7,10 @@ function DoctorAppointment({ docId }) {
 
   return (
     <section className="ml-6 mt-4 mr-6 lg:ml-24 lg:mt-8 lg:mr-24">
-      <div className="flex flex-col lg:flex gap-2 lg:gap-4">
+      <div className="flex flex-col lg:flex lg:flex-row gap-2 lg:gap-4">
         <div className="w-[100vw] h-[50vh] lg:w-[40vw] lg:h-[50vh] rounded-lg bg-blue-600">
           <img
-            className="w-3/4 lg:w-[266px] h-[322px]"
+            className="w-3/4 lg:w-[266px] lg:h-[322px]"
             src={selctedDoc.image}
             alt={`${selctedDoc.name}`}
           />

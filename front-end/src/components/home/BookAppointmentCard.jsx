@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { AppContext } from "../../context/AppContextProvider";
+import { useNavigate } from "react-router-dom";
 
 function BookAppointmentCard() {
   const { assets } = useContext(AppContext);
+  const navigate = useNavigate();
   return (
     <section className="m-6 md:mt-24 md:ml-24 md:mr-24 md:mb-16">
       <div className=" h-[35vh]  max-w-full xl:h-[55vh] bg-blue-500 border rounded-xl flex flex-row gap-4 p-4 relative">
@@ -10,7 +12,13 @@ function BookAppointmentCard() {
           <h1 className="text-lg md:text-xl lg:text-2xl xl:text-4xl text-white font-bold">
             Book Appointment With 100+ Trusted Doctors
           </h1>
-          <button className="w-24 h-12  md:w-[195px] md:h-[44px] text-sm md:text-lg items-center p-2  rounded-3xl outline-none bg-white text-center text-stone-700 mt-2">
+          <button
+            onClick={() => {
+              navigate("/signup");
+              scrollTo(0, 0);
+            }}
+            className="w-24 h-12  md:w-[195px] md:h-[44px] text-sm md:text-lg items-center p-2  rounded-3xl outline-none bg-white text-center text-stone-700 mt-2"
+          >
             Create Account
           </button>
         </div>

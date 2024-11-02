@@ -85,7 +85,7 @@ const NavBar = () => {
         ) : (
           <button
             onClick={() => {
-              navigate("/login");
+              navigate("/signup");
             }}
             className="w-24 h-8 text-xs md:w-[195px] md:h-[44px]  md:text-lg rounded-3xl outline-none bg-blue-500 text-white"
           >

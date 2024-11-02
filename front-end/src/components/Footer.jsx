@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import { AppContext } from "../context/AppContextProvider";
 
 function Footer() {
-  const {assets} = useContext(AppContext)
+  const { assets } = useContext(AppContext);
   return (
-    <footer className="ml-24 mt-24 mr-24 relative">
+    <footer className="ml-6 mr-6 lg:ml-24 mt-24 lg:mr-24 relative">
       <div className="flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14  text-sm  ">
         <div className="flex flex-col gap-4 ">
           <img className=" w-1/3" src={assets.logo} alt="prescripto logo" />
