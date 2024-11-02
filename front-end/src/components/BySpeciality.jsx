@@ -1,13 +1,10 @@
-import React from "react";
-import {
-  assets,
-  specialityData,
-} from "../../public/assets/assets_frontend/assets";
-
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { AppContext } from "../context/AppContextProvider";
 
 function BySpeciality() {
   const navigate = useNavigate();
+  const { specialityData} = useContext(AppContext)
   return (
     <section id="speciality" className="mt-2 ml-6 md:mt-4 mr-6 xl:mt-12">
       <div className="flex flex-col items-center gap-y-2 xl:gap-y-6">

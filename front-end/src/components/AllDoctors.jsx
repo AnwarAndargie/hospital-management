@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { doctors } from "../../public/assets/assets_frontend/assets";
+import React, { useEffect, useState, useContext } from "react";
 import { specialityData } from "../../public/assets/assets_frontend/assets";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { AppContext } from "../context/AppContextProvider";
 
 function AllDoctors() {
   const { speciality } = useParams();
   const [filteredDocs, setFilteredDocs] = useState([]);
   const navigate = useNavigate();
+  const { doctors } = useContext(AppContext);
 
   useEffect(() => {
     if (speciality) {

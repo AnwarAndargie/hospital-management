@@ -1,7 +1,8 @@
-import React from "react";
-import { assets } from "../../public/assets/assets_frontend/assets";
+import React, { useContext } from "react";
+import { AppContext } from "../context/AppContextProvider";
 
 function HomeCard() {
+  const { assets } = useContext(AppContext);
   return (
     <section>
       <div className="m-6 h-[40vh] pt-4 pl-4 rounded-md max-w-full md:h-[698px] flex flex-row justify-between items-center bg-blue-500 md:mt-4 xl:pt-6 md:ml-24 md:mr-24 md:pl-12 md:rounded-xl">

@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { assets } from "../../public/assets/assets_frontend/assets";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { AppContext } from "../context/AppContextProvider";
 
 const NavBar = () => {
   const navigate = useNavigate();
   const [token, setToken] = useState(true);
+  const { assets } = useContext(AppContext);
   return (
     <nav>
       <div className="ml-6 mr-6 mb-2 flex flex-row justify-between items-center md:mb-5 py-4 xl:ml-24 xl:mr-24">

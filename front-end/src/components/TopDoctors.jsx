@@ -1,9 +1,10 @@
-import React from "react";
-import { doctors } from "../../public/assets/assets_frontend/assets";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { AppContext } from "../context/AppContextProvider";
 
 function TopDoctors() {
   const navigate = useNavigate();
+  const { doctors } = useContext(AppContext);
   return (
     <section className="flex flex-col xl:w-full ml-6 mr-6 mt-4 xl:ml-12 xl:mt-12 xl:mr-12  items-center">
       <div className="flex flex-col items-center">

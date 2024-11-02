@@ -1,7 +1,8 @@
-import React from "react";
-import { assets } from "../../public/assets/assets_frontend/assets";
+import React, { useContext } from "react";
+import { AppContext } from "../context/AppContextProvider";
 
 function BookAppointmentCard() {
+  const { assets } = useContext(AppContext);
   return (
     <section className="m-6 md:mt-24 md:ml-24 md:mr-24 md:mb-16">
       <div className=" h-[35vh]  max-w-full xl:h-[55vh] bg-blue-500 border rounded-xl flex flex-row gap-4 p-4 relative">
