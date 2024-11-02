@@ -39,7 +39,7 @@ const NavBar = () => {
               <hr className="border-none outline-none h-0.5 bg-blue-500 w-3/5 m-auto hidden" />
             </NavLink>
 
-            <NavLink to="/contact">
+            <NavLink to="/contactus">
               <li>Contact</li>
               <hr className="border-none outline-none h-0.5 bg-blue-500 w-3/5 m-auto hidden" />
             </NavLink>

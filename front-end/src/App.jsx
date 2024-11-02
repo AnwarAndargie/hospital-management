@@ -10,7 +10,7 @@ import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-
+import ContactUs from "./pages/ContactUs";
 function App() {
   return (
     <>
@@ -26,6 +26,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/myappointment" element={<MyAppointment />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/contactus" element={<ContactUs />} />
       </Routes>
       <Footer />
     </>

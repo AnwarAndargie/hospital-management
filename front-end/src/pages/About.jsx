@@ -1,11 +1,14 @@
-import React from "react";
-import { assets } from "../../public/assets/assets_frontend/assets";
+import React, { useContext } from "react";
+import { AppContext } from "../context/AppContextProvider";
 
 const About = () => {
+  const { assets } = useContext(AppContext);
   return (
     <section className="ml-24 mr-24 mt-8">
       <div>
-        <h1 className="text-2xl font-medium text-center mb-6">About Us</h1>
+        <h1 className="text-2xl font-semibold text-center mb-6 text-gray-700">
+          About Us
+        </h1>
         <div className="flex flex-row gap-10 mb-12">
           <img
             className="w-1/4 h-[55vh]"
@@ -27,7 +30,7 @@ const About = () => {
               managing ongoing care, Prescripto is here to support you every
               step of the way.
             </p>
-            <h1 className="font-semibold">Our Vision</h1>
+            <h1 className="font-semibold text-gray-700 text-xl">Our Vision</h1>
             <p>
               Our vision at Prescripto is to create a seamless healthcare
               experience for every user. We aim to bridge the gap between
@@ -36,7 +39,9 @@ const About = () => {
             </p>
           </div>
         </div>
-        <h1 className="text-2xl mb-4">Why Choose Us</h1>
+        <h1 className="text-2xl mb-4 font-semibold text-gray-700">
+          Why Choose Us
+        </h1>
         <div className="flex flex-row ">
           <div className="border p-8">
             <h1 className="text-xl font-bold  text-zinc-900 mb-2 ">
