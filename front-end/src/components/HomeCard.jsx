@@ -20,18 +20,21 @@ function HomeCard() {
               schedule your appointment hassle-free.
             </p>
           </div>
-          <button className="w-32 h-8 text-xs md:w-[195px] md:h-[44px] flex flex-row items-center gap-2 p-2  md:text-lg rounded-3xl outline-none bg-white text-stone-700">
+          <a
+            href="#speciality"
+            className="w-32 h-8 text-xs md:w-[195px] md:h-[44px] flex flex-row items-center gap-2 p-2  md:text-lg rounded-3xl outline-none bg-white text-stone-700 hover:scale-95"
+          >
             Book Appointment
             <img
               className="w-4 h-2 text-stone-700"
               src={assets.arrow_icon}
               alt=""
             />
-          </button>
+          </a>
         </div>
-        <div className="flex flex-col items-end">
+        <div className="md:w-1/2 relative">
           <img
-            className="w-[35vw] h-[30vh] lg:w-[55vw] lg:h-[40vh] xl:w-[65vw] xl:h-[75vh]"
+            className="w-[35vw] h-[30vh] lg:w-[55vw] lg:h-[40vh] xl:w-full xl:h-[75vh] absolute -top-36  rounded-lg"
             src={assets.header_img}
             alt=""
           />
