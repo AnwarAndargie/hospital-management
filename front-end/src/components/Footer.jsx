@@ -3,8 +3,8 @@ import { assets } from "../../public/assets/assets_frontend/assets";
 
 function Footer() {
   return (
-    <footer className="ml-24 mt-24 mr-24">
-      <div className="flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14  text-sm">
+    <footer className="ml-24 mt-24 mr-24 relative">
+      <div className="flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14  text-sm  ">
         <div className="flex flex-col gap-4 ">
           <img className=" w-1/3" src={assets.logo} alt="prescripto logo" />
           <p>
