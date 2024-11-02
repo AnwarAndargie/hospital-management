@@ -1,13 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
-import { specialityData } from "../../public/assets/assets_frontend/assets";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { AppContext } from "../context/AppContextProvider";
+import { AppContext } from "../../context/AppContextProvider";
 
 function AllDoctors() {
   const { speciality } = useParams();
   const [filteredDocs, setFilteredDocs] = useState([]);
   const navigate = useNavigate();
-  const { doctors } = useContext(AppContext);
+  const { doctors, specialityData } = useContext(AppContext);
 
   useEffect(() => {
     if (speciality) {
@@ -48,7 +47,7 @@ function AllDoctors() {
         <div className="flex flex-col items-center w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 xl:gap-4 mt-4 xl:mt-8">
             {filteredDocs.map((doctor) => (
-              <Link to={`/doctors/${doctor.id}`} key={doctor.id}>
+              <Link to={`/appointment/${doctor._id}`} key={doctor.id}>
                 <div className="transform transition duration-300 scale-95 hover:opacity-100 hover:scale-100">
                   <div className="flex flex-col w-72 h-72 md:w-52 md:h-52 border rounded-t-xl bg-blue-50 transition-shadow hover:shadow-lg">
                     <img

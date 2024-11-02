@@ -1,5 +1,5 @@
 import React from "react";
-import AllDoctors from "../components/AllDoctors";
+import AllDoctors from "../components/home/AllDoctors";
 
 const Doctors = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AppContext } from "../context/AppContextProvider";
+import { AppContext } from "../../context/AppContextProvider";
 
 function BookAppointmentCard() {
   const { assets } = useContext(AppContext);

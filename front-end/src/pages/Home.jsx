@@ -1,8 +1,8 @@
 import React from "react";
-import HomeCard from "../components/HomeCard";
-import BySpeciality from "../components/BySpeciality";
-import TopDoctors from "../components/TopDoctors";
-import BookAppointmentCard from "../components/BookAppointmentCard.";
+import HomeCard from "../components/home/HomeCard";
+import BySpeciality from "../components/home/BySpeciality";
+import TopDoctors from "../components/home/TopDoctors";
+import BookAppointmentCard from "../components/home/BookAppointmentCard";
 
 const Home = () => {
   return (

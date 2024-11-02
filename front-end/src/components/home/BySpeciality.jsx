@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { AppContext } from "../context/AppContextProvider";
+import { AppContext } from "../../context/AppContextProvider";
 
 function BySpeciality() {
   const navigate = useNavigate();
