@@ -57,7 +57,7 @@ const NavBar = () => {
               <div className="w-36 h-24 text-sm gap-2 p-2 md:min-w-52 md:h-36 bg-stone-100 rounded-sm flex flex-col md:gap-4 md:p-4">
                 <p
                   onClick={() => {
-                    navigate("profle");
+                    navigate("profile");
                   }}
                   className="hover:text-black cursor-pointer"
                 >
