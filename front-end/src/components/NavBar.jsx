@@ -1,15 +1,17 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { Link, useNavigate, NavLink } from "react-router-dom";
 import { AppContext } from "../context/AppContextProvider";
 
 const NavBar = () => {
   const navigate = useNavigate();
   const [token, setToken] = useState(true);
   const { assets } = useContext(AppContext);
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
     <nav>
       <div className="ml-6 mr-6 mb-2 flex flex-row justify-between items-center md:mb-5 py-4 xl:ml-24 xl:mr-24">
+        {/* Logo */}
         <div>
           <Link to="/">
             <img
@@ -19,63 +21,49 @@ const NavBar = () => {
             />
           </Link>
         </div>
-        <div>
-          <ul
-            className="flex flex-col text-sm  md:flex md:flex-row items-center md:gap-x-4  text-;
-       list-none capitalize text-gray-950 md:text-lg"
-          >
-            <NavLink to="/">
-              <li>Home</li>
-              <hr className="border-none outline-none h-0.5  bg-blue-500 w-3/5 m-auto hidden" />
-            </NavLink>
 
-            <NavLink to="/doctors">
-              <li>All Doctors</li>
-              <hr className="border-none outline-none h-0.5 bg-blue-500 w-3/5 m-auto hidden" />
-            </NavLink>
+        {/* Desktop Links */}
+        <ul className="hidden md:flex md:flex-row items-center gap-x-4 text-gray-950 md:text-lg capitalize">
+          <NavLink to="/" className="hover:text-blue-500">
+            <li>Home</li>
+          </NavLink>
+          <NavLink to="/doctors" className="hover:text-blue-500">
+            <li>All Doctors</li>
+          </NavLink>
+          <NavLink to="/about" className="hover:text-blue-500">
+            <li>About</li>
+          </NavLink>
+          <NavLink to="/contactus" className="hover:text-blue-500">
+            <li>Contact</li>
+          </NavLink>
+        </ul>
 
-            <NavLink to="/about">
-              <li>About</li>
-              <hr className="border-none outline-none h-0.5 bg-blue-500 w-3/5 m-auto hidden" />
-            </NavLink>
-
-            <NavLink to="/contactus">
-              <li>Contact</li>
-              <hr className="border-none outline-none h-0.5 bg-blue-500 w-3/5 m-auto hidden" />
-            </NavLink>
-          </ul>
-        </div>
+        {/* Profile Section or Signup Button */}
         {token ? (
           <div className="flex items-center cursor-pointer gap-3 group relative">
             <img
-              className=" w-8 h-8 md:w-12 md:h-12 rounded-full"
+              className="w-8 h-8 md:w-12 md:h-12 rounded-full"
               src={assets.profile_pic}
               alt="profile picture"
             />
-            <img src={assets.dropdown_icon} alt="drop-down icon" />
+            <img src={assets.dropdown_icon} alt="dropdown icon" />
             <div className="absolute right-0 top-0 pt-14 font-semibold text-base text-gray-600 z-20 hidden group-hover:block">
-              <div className="w-36 h-24 text-sm gap-2 p-2 md:min-w-52 md:h-36 bg-stone-100 rounded-sm flex flex-col md:gap-4 md:p-4">
+              <div className="w-36 h-24 p-2 text-sm bg-stone-100 rounded-sm flex flex-col gap-2">
                 <p
-                  onClick={() => {
-                    navigate("profile");
-                  }}
-                  className="hover:text-black cursor-pointer"
+                  onClick={() => navigate("profile")}
+                  className="cursor-pointer hover:text-black"
                 >
                   My Profile
                 </p>
                 <p
-                  onClick={() => {
-                    navigate("my-appointment");
-                  }}
-                  className="hover:text-black cursor-pointer"
+                  onClick={() => navigate("my-appointment")}
+                  className="cursor-pointer hover:text-black"
                 >
                   My Appointments
                 </p>
                 <p
-                  onClick={() => {
-                    setToken(false);
-                  }}
-                  className="hover:text-black cursor-pointer"
+                  onClick={() => setToken(false)}
+                  className="cursor-pointer hover:text-black"
                 >
                   Logout
                 </p>
@@ -84,16 +72,70 @@ const NavBar = () => {
           </div>
         ) : (
           <button
-            onClick={() => {
-              navigate("/signup");
-            }}
-            className="w-24 h-8 text-xs md:w-[195px] md:h-[44px]  md:text-lg rounded-3xl outline-none bg-blue-500 text-white"
+            onClick={() => navigate("/signup")}
+            className="w-24 h-8 md:w-[195px] md:h-[44px] text-xs md:text-lg rounded-3xl bg-blue-500 text-white"
           >
             Create Account
           </button>
         )}
+
+        {/* Mobile Menu Icon */}
+        <img
+          onClick={() => setShowMenu(true)}
+          className="w-6 md:hidden cursor-pointer"
+          src={assets.menu_icon}
+          alt="menu icon"
+        />
       </div>
-      <hr className="w-full ml-24 mr-24 h-4 text-slate-700" />
+
+      {/* Mobile Menu */}
+      <div
+        className={`${
+          showMenu ? "fixed inset-0 z-20 bg-white" : "hidden"
+        } md:hidden flex flex-col items-center p-4`}
+      >
+        <div className="flex items-center justify-between w-full px-5 py-6">
+          <img className="w-36" src={assets.logo} alt="logo" />
+          <img
+            onClick={() => setShowMenu(false)}
+            className="w-7 cursor-pointer"
+            src={assets.cross_icon}
+            alt="close icon"
+          />
+        </div>
+        <ul className="flex flex-col items-center gap-4 text-lg mt-4">
+          <NavLink
+            onClick={() => setShowMenu(false)}
+            to="/"
+            className="hover:text-blue-500"
+          >
+            <li>Home</li>
+          </NavLink>
+          <NavLink
+            onClick={() => setShowMenu(false)}
+            to="/doctors"
+            className="hover:text-blue-500"
+          >
+            <li>All Doctors</li>
+          </NavLink>
+          <NavLink
+            onClick={() => setShowMenu(false)}
+            to="/about"
+            className="hover:text-blue-500"
+          >
+            <li>About</li>
+          </NavLink>
+          <NavLink
+            onClick={() => setShowMenu(false)}
+            to="/contactus"
+            className="hover:text-blue-500"
+          >
+            <li>Contact</li>
+          </NavLink>
+        </ul>
+      </div>
+
+      <hr className="w-full mx-auto h-0.5 bg-slate-300" />
     </nav>
   );
 };
