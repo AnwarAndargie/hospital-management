@@ -26,15 +26,19 @@ const NavBar = () => {
         <ul className="hidden md:flex md:flex-row items-center gap-x-4 text-gray-950 md:text-lg capitalize">
           <NavLink to="/" className="hover:text-blue-500">
             <li>Home</li>
+            <hr className="hidden w-8 h-0.5 bg-blue-500 ml-2" />
           </NavLink>
           <NavLink to="/doctors" className="hover:text-blue-500">
             <li>All Doctors</li>
+            <hr className="hidden w-8 h-0.5 bg-blue-500 ml-2" />
           </NavLink>
           <NavLink to="/about" className="hover:text-blue-500">
             <li>About</li>
+            <hr className="hidden w-8 h-0.5 bg-blue-500 ml-2" />
           </NavLink>
           <NavLink to="/contactus" className="hover:text-blue-500">
             <li>Contact</li>
+            <hr className="hidden w-8 h-0.5 bg-blue-500 ml-2" />
           </NavLink>
         </ul>
 
@@ -128,7 +132,7 @@ const NavBar = () => {
           <NavLink
             onClick={() => setShowMenu(false)}
             to="/contactus"
-            className="hover:text-blue-500"
+            className="border p-2 outline-none hover:text-blue-500"
           >
             <li>Contact</li>
           </NavLink>

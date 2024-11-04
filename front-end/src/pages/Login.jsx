@@ -17,12 +17,14 @@ const Login = () => {
           <input
             type="email"
             name="email"
+            required
             className="w-full outline-none ring-1 focus:ring-1 focus:ring-blue-700 focus:shadow-sm "
           />
           <label htmlFor="password">Password</label>
           <input
             type="text"
             name="password"
+            required
             className="w-full outline-none ring-1 focus:ring-1 focus:ring-blue-700 focus:shadow-sm "
           />
           <button className="w-full h-10 rounded-xl outline-none bg-blue-500 text-white text-sm mt-4 ">
